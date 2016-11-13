@@ -42,14 +42,12 @@ class Night:
                           self.data["Walked > 5000 steps"], self.data["Warm shower in past hour"],
                           self.data["Wearing socks"]]
 
-
     def get_vector(self):
         return self.data_list
 
-    def set_sleep_details(self, duration_mins, quality):
+    def set_sleep_details(self, duration_mins, quality_value):
         self.duration_mins = duration_mins
         self.quality = quality
-
 
 # The parameter records are loaded into an array of Night objects.
 data_file = open('nights_data.txt')
@@ -82,7 +80,6 @@ for n in nights:
     if n.quality <= 0.0 or n.duration_mins <= 0.0:
         nights.remove(n)
 
-
 # Create a single matrix from the parameters of all nights.
 a = np.ndarray(shape=(len(nights), 26), dtype=float)
 for i in range(len(nights)):
@@ -101,8 +98,7 @@ for j in range(len(nights)):
         total += nights[j].data_list[i]*result[i]
     print(total, nights[j].quality)
 
-
-#Plotting the data
+#Plotting the data using pyplot
 names = ["1 tsp. Peanut butter", "45 mins of no screens", "Ate healthily today", "Avoided blue-light", "Brushed teeth",
          "Chamomile tea", "Exercised", "Eye mask", "Fap", "Had alcohol in past 3 hours", "Had caffeine after 2pm",
          "Kept bed sacred today", "Krill oil", "Listened to relaxing music", "Meditated since 12pm", "Napped today",
@@ -120,9 +116,9 @@ ind = np.arange(len(y))
 ax.barh(ind, y, width, color="blue")
 ax.set_yticks(ind+width/2)
 ax.set_yticklabels(x, minor=False)
-plt.title('PROJECT SLEEP : Sleep Quality Model', y=1.05)
+plt.title('PROJECT_SLEEP : Sleep Quality Model', y=1.05)
 plt.text(-0.65, 29, str(len(nights))+" data points")
 plt.text(-0.65, 30, time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime()))
 #plt.tight_layout()
 #plt.show()
-plt.savefig(os.path.join('ProjectSleep.png'), dpi=300, format='png', bbox_inches='tight') # use format='svg' or 'pdf' for vectorial pictures
+plt.savefig(os.path.join('ProjectSleep.png'), dpi=300, format='png', bbox_inches='tight')
