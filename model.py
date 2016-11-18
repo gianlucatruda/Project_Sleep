@@ -100,9 +100,9 @@ for j in range(len(nights)):
 
 #Plotting the data using pyplot
 names = ["1 tsp. Peanut butter", "45 mins of no screens", "Ate healthily today", "Avoided blue-light", "Brushed teeth",
-         "Chamomile tea", "Exercised", "Eye mask", "Fap", "Had alcohol in past 3 hours", "Had caffeine after 2pm",
+         "Chamomile tea", "Exercised", "Eye mask", "Param F.", "Had alcohol in past 3 hours", "Had caffeine after 2pm",
          "Kept bed sacred today", "Krill oil", "Listened to relaxing music", "Meditated since 12pm", "Napped today",
-         "Podcast / audiobook", "Read a paper book", "Tender Time", "Small snack", "Stretched before bed",
+         "Podcast / audiobook", "Read a paper book", "Param. T", "Small snack", "Stretched before bed",
          "Took 1 Somnil tablet", "Took 2+ Somnil tablets", "Walked > 5000 steps", "Warm shower in past hour",
          "Wearing socks"]
 plt.clf()
